@@ -1,0 +1,35 @@
+4.1
+
+FROM film
+WHERE title ILIKE '%C' AND length > 90 AND rental_rate = 2.99;
+
+4.2
+
+SELECT COUNT (replacement_cost)
+FROM film;
+
+1000
+
+4.3
+
+SELECT COUNT (*)
+FROM film
+WHERE title  ILIKE 't%' AND rating = 'G';
+
+9
+
+4.4
+
+SELECT COUNT (country)
+FROM country
+WHERE country LIKE '_____';
+
+13
+
+4.5
+
+SELECT COUNT (city)
+FROM city
+WHERE city ILIKE '%r';
+
+33
