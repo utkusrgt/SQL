@@ -1,0 +1,45 @@
+7.1
+
+SELECT rating FROM film
+GROUP BY rating;
+
+"PG"
+"NC-17"
+"R"
+"G"
+"PG-13"
+
+
+7.2
+
+SELECT replacement_cost, COUNT(*) FROM film
+GROUP BY replacement_cost
+HAVING COUNT(*) > 50;
+
+cost	count
+
+13.99	55
+20.99	57
+27.99	53
+29.99	53
+12.99	55
+14.99	51
+22.99	55
+21.99	55
+
+7.3
+
+SELECT store_id, COUNT(*) FROM customer
+GROUP BY store_id;
+
+1	326
+2	273
+
+7.4
+
+SELECT country_id, COUNT(*) FROM city
+GROUP BY country_id
+ORDER BY COUNT(*) DESC
+LIMIT 1;
+
+44	60
