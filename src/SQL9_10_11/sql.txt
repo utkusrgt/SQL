@@ -1,0 +1,77 @@
+9.1
+
+SELECT country , city
+FROM city
+INNER JOIN country
+ON city.country_id = country.country_id;
+
+9.2
+
+SELECT first_name, last_name , payment_id, amount
+FROM customer
+INNER JOIN payment
+ON customer.customer_id = payment.customer_id;
+
+9.3
+
+SELECT rental_id, first_name, last_name
+FROM customer
+INNER JOIN rental
+ON customer.customer_id = rental.customer_id;
+
+10.1
+
+SELECT country, city
+FROM country
+LEFT JOIN city
+ON country.country_id = city.country_id
+ORDER BY country;
+
+
+10.2
+
+SELECT first_name, last_name, payment_id, amount
+FROM customer
+RIGHT JOIN payment
+ON customer.customer_id = payment.customer_id
+ORDER BY customer;
+
+
+10.3
+
+SELECT first_name, last_name, rental_id
+FROM customer
+FULL JOIN rental
+ON customer.customer_id = rental.customer_id
+ORDER BY customer;
+
+
+11.1
+
+(SELECT first_name
+FROM actor)
+
+UNION
+
+(SELECT first_name
+FROM customer);
+
+11.2
+
+(SELECT first_name
+FROM actor)
+
+intersect
+
+(SELECT first_name
+FROM customer);
+
+11.3
+
+(SELECT first_name
+FROM actor)
+
+except
+
+(SELECT first_name
+FROM customer);
