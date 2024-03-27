@@ -19,7 +19,8 @@ WHERE rental_rate = (SELECT min(rental_rate) FROM film) AND replacement_cost = (
 12.4
 
 
-select CONCAT(first_name, ' ', last_name) AS name, amount  from customer
-inner join payment on customer.customer_id = payment.customer_id
-WHERE amount = (select max(amount) from payment);
+select CONCAT(first_name, ' ', last_name) AS name, count(*) as most from payment
+inner join customer on customer.customer_id = payment.customer_id
+group by name
+order by most DESC;
 
