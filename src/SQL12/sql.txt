@@ -1,0 +1,25 @@
+12.1
+
+SELECT COUNT(*)
+FROM film
+WHERE length > (SELECT AVG(length) FROM film);
+
+12.2
+
+SELECT title, rental_rate
+FROM film
+WHERE rental_rate = (SELECT max(rental_rate) FROM film);
+
+12.3
+
+SELECT title, rental_rate, replacement_cost
+FROM film
+WHERE rental_rate = (SELECT min(rental_rate) FROM film) AND replacement_cost = (SELECT MIN(replacement_cost) FROM film);
+
+12.4
+
+
+select CONCAT(first_name, ' ', last_name) AS name, amount  from customer
+inner join payment on customer.customer_id = payment.customer_id
+WHERE amount = (select max(amount) from payment);
+
